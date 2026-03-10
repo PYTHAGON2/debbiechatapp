@@ -1,0 +1,155 @@
+/* Cute Girly Pink and Blue Theme */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffe6f2; /* soft pink */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    font-size: 14px; /* Suitable for small screens */
+}
+
+.header {
+    background-color: #ffb3d9;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    text-shadow: 1px 1px 2px #ff66b3;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.controls {
+    text-align: center;
+    padding: 5px;
+    background-color: #b3e6ff; /* soft blue */
+    border-bottom: 2px solid #80ccff;
+}
+
+button {
+    background-color: #fff;
+    border: 1px solid #ffb3d9;
+    color: #ff66b3;
+    padding: 5px 10px;
+    margin: 2px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#chat-container {
+    padding: 10px;
+    margin-bottom: 80px; /* space for input area */
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 10px;
+    border-left: 5px solid #ccc; /* fallback */
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    word-wrap: break-word;
+}
+
+.message-content {
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+.message-subtitle {
+    font-size: 10px;
+    color: #888;
+    text-align: right;
+}
+
+.input-area {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #b3e6ff;
+    padding: 5px;
+    box-sizing: border-box;
+    border-top: 2px solid #80ccff;
+}
+
+.emoji-bar {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.em-btn {
+    padding: 3px 6px;
+    font-size: 16px;
+    margin: 0 2px;
+}
+
+#chat-form {
+    display: table;
+    width: 100%;
+}
+
+#msg-input {
+    display: table-cell;
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ffb3d9;
+    border-radius: 10px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+#btn-send {
+    display: table-cell;
+    width: 60px;
+    background-color: #ffb3d9;
+    color: #fff;
+    border: none;
+}
+
+/* Night Mode */
+body.night {
+    background-color: #1a1a2e;
+    color: #e6e6e6;
+}
+
+body.night .header {
+    background-color: #16213e;
+    color: #ffb3d9;
+    text-shadow: none;
+}
+
+body.night .controls, body.night .input-area {
+    background-color: #0f3460;
+    border-color: #16213e;
+}
+
+body.night .message {
+    background-color: #2a2a4a;
+    color: #fff;
+    border-left-color: #444;
+}
+
+body.night .message-subtitle {
+    color: #aaa;
+}
+
+body.night button {
+    background-color: #16213e;
+    color: #ffb3d9;
+    border-color: #ff66b3;
+}
+
+body.night #msg-input {
+    background-color: #1a1a2e;
+    color: #fff;
+    border-color: #ff66b3;
+}
+
+body.night #btn-send {
+    background-color: #e94560;
+    color: #fff;
+}
