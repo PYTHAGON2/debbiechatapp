@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Debbie Chatbox</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <body>
     <div class="header">
         <h1>Debbie Chatbox 🎀</h1>
     </div>
     <div class="controls">
+        <button id="btn-refresh">🔄 Refresh</button>
         <button id="btn-load">Load Last <span id="load-count">4</span></button>
         <button id="btn-clear">Clear Screen</button>
         <button id="btn-night">Toggle Night</button>
     </div>
-    
+
     <div id="chat-container">
         <!-- Messages will appear here -->
     </div>
-    
+
     <div class="input-area">
         <div class="emoji-bar">
             <!-- some basic emoji and markup buttons -->
@@ -37,4 +40,5 @@
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>

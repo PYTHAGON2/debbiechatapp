@@ -14,8 +14,24 @@ window.onload = function () {
     checkNightMode();
     fetchIpAndDevice();
 
-    document.getElementById("btn-load").onclick = function () {
+    // Fetch initial messages on load
+    setTimeout(function () {
         loadMessages(loadCount);
+    }, 500); // small delay to allow ip fetch to start, though loadMessages won't use it directly
+
+    var btnRefresh = document.getElementById("btn-refresh");
+    if (btnRefresh) {
+        btnRefresh.onclick = function () {
+            loadMessages(loadCount);
+        };
+    }
+
+    document.getElementById("btn-load").onclick = function () {
+        var input = prompt("How many messages to load?", loadCount.toString());
+        if (input !== null && !isNaN(parseInt(input, 10)) && parseInt(input, 10) > 0) {
+            loadCount = parseInt(input, 10);
+            loadMessages(loadCount);
+        }
     };
 
     document.getElementById("btn-clear").onclick = function () {
@@ -85,8 +101,10 @@ function stringToColor(str) {
     for (var i = 0; i < str.length; i++) {
         hash = str.charCodeAt(i) + ((hash << 5) - hash);
     }
-    var c = (hash & 0x00FFFFFF).toString(16).toUpperCase();
-    return "00000".substring(0, 6 - c.length) + c;
+    // Convert hash to a 360 degree hue
+    var hue = Math.abs(hash) % 360;
+    // Return a cute pastel color (using HSL mapping directly in style attributes)
+    return "hsl(" + hue + ", 80%, 65%)";
 }
 
 function renderMessage(msg) {
@@ -96,7 +114,7 @@ function renderMessage(msg) {
     div.className = "message";
 
     // Assign color based on IP
-    var ipColor = "#" + stringToColor(msg.ip_address || "unknown");
+    var ipColor = stringToColor(msg.ip_address || "unknown");
     div.style.borderLeftColor = ipColor;
 
     var contentDiv = document.createElement("div");
